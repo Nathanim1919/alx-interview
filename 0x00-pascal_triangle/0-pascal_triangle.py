@@ -3,6 +3,8 @@
 0-pascal_triangle
 """
 
+
+
 def pascal_triangle(n):
     """Prints Pascal's triangle with n rows."""
     if n <= 0:
