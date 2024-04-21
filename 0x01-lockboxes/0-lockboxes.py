@@ -10,6 +10,11 @@ def canUnlockAll(boxes):
     unlocked = [0]  # The first box is given open
     keys = boxes[0]  # Start with keys from the first box
 
+    if type(boxes) is not list:
+        return False
+    elif (len(boxes)) == 0:
+        return False
+
     while len(keys) > 0:
         new_keys = []
         for key in keys:
