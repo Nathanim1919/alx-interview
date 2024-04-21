@@ -14,13 +14,13 @@ def canUnlockAll(boxes):
         return False
     elif (len(boxes)) == 0:
         return False
-
-    while len(keys) > 0:
-        new_keys = []
-        for key in keys:
-            if key not in unlocked:
-                unlocked.append(key)
-                new_keys += boxes[key]
-        keys = new_keys
+    else:
+        while len(keys) > 0:
+            new_keys = []
+            for key in keys:
+                if key not in unlocked:
+                    unlocked.append(key)
+                    new_keys += boxes[key]
+            keys = new_keys
 
     return len(unlocked) == len(boxes)
