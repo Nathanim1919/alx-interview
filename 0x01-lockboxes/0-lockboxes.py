@@ -4,7 +4,7 @@
    and each box may contain keys to other boxes."""
 
 
-def canUnlockAll(boxes)
+def canUnlockAll(boxes):
     """a Function, that return True if all boxs can be opened else False"""
 
     unlocked = [0]  # The first box is given open
