@@ -32,7 +32,7 @@ try:
         # Print statistics after every 10 lines
         if i % 10 == 0:
             total_size = sum(file_sizes)
-            print(f"Total file size: {total_size}")
+            print(f"File size: {total_size}")
             for code, count in sorted(status_codes.items()):
                 if count > 0:
                     print(f"{code}: {count}")
