@@ -11,8 +11,6 @@
 def minOperations(n: int) -> int:
     operation = 0
     factor = 2
-    count_outer_loop = 0
-    count_inner_loop = 0
 
     if (n < 2):
         return 0
