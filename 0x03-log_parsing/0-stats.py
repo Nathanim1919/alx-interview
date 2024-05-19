@@ -40,7 +40,7 @@ try:
 except KeyboardInterrupt:
     # Handle the Keyboard Interrupt
     total_size = sum(file_sizes)
-    print(f"Total file size: {total_size}")
+    print(f"File size: {total_size}")
     for code, count in sorted(status_codes.items()):
         if count > 0:
             print(f"{code}: {count}")
