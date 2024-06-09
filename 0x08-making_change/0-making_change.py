@@ -1,35 +1,25 @@
 #!/usr/bin/python3
-"""
-Module for making change
-"""
+"""Making Change Problem"""
 
 
 def makeChange(coins, total):
-    """this function makes change for a
-    given total using the least amount of coins
-
-    Args:
-        coins (List[number]): list of coins
-        total (number): the total to make change for
-
-    Returns:
-        number: the least amount of coins needed to make change
-    """
-    if (total <= 0):
+    """Making Changes"""
+    if total <= 0:
         return 0
-
-    # Initialize dp array
-    dp = [float('inf')] * (total + 1)
-
-    # Base case: no coins needed to make change for 0
-    dp[0] = 0
-
-    # Initialize the rest of the dp array
-    for i in range(1, total + 1):
-        for coin in coins:
-            if (coin <= i):
-                dp[i] = min(dp[i], dp[i - coin] + 1)
-                if (dp[i] == 1):
-                    break
-
-    return dp[total] if dp[total] != float('inf') else -1
+    elif total > 0:
+        newList = sorted(coins[:])
+        newList = list(reversed(newList))
+        count = 0
+        value = total + 0
+        index = 0
+        while value >= 0 and (index < len(newList)):
+            if value >= newList[index]:
+                value = value - newList[index]
+                count += 1
+            elif value < newList[index]:
+                index += 1
+        if index == len(newList):
+            if value != 0:
+                return -1
+            elif value == 0:
+                return count
