@@ -30,4 +30,4 @@ def makeChange(coins, total):
                 if (dp[i] == 1):
                     break
 
-    return dp[total]
+    return dp[total] if dp[total] != float('inf') else -1
