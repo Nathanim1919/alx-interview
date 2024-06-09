@@ -19,11 +19,13 @@ def makeChange(coins, total):
         return 0
 
     # Initialize dp array
-    dp = [0] * (total + 1)
+    dp = [float('inf')] * (total + 1)
+
+    # Base case: no coins needed to make change for 0
+    dp[0] = 0
 
     # Initialize the rest of the dp array
     for i in range(1, total + 1):
-        dp[i] = float('inf')
         for j in range(len(coins)):
             if (coins[j] <= i):
                 dp[i] = min(dp[i], dp[i - coins[j]] + 1)
