@@ -8,11 +8,10 @@ const requestPromise = util.promisify(request);
 
 const printCharactersOfStarWarMovie = async () => {
     const movieId = process.argv[2];
-    const BaseUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
+    const baseUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
     try {
-        // Use the promisified request method
-        const response = await requestPromise(BaseUrl);
+        const response = await requestPromise(baseUrl);
         const movie = JSON.parse(response.body);
 
         for (let url of movie.characters) {
